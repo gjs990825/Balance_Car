@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\TIMER;..\HARDWARE\MOTOR;..\HARDWARE\ENCODER;..\HARDWARE\IIC;..\HARDWARE\MPU6050;..\HARDWARE\KALMAN_FILTER;..\HARDWARE\PID</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\TIMER;..\HARDWARE\MOTOR;..\HARDWARE\ENCODER;..\HARDWARE\IIC;..\HARDWARE\MPU6050;..\HARDWARE\KALMAN_FILTER;..\HARDWARE\PID;..\HARDWARE\BUZZER</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -441,6 +441,11 @@
               <FileName>pid.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\PID\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>buzzer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\BUZZER\buzzer.c</FilePath>
             </File>
           </Files>
         </Group>

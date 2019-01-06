@@ -9,6 +9,7 @@
 #include "mpu6050.h"
 #include "kalman_filter.h"
 #include "pid.h"
+#include "buzzer.h"
 
 
 
@@ -27,11 +28,14 @@ int main(void)
 	TIM4_EncoderInit(0xffff, 0); //TIM2 Encoder initialize(for left wheel)
 	delay_ms(300);
 	MPU6050_Init();
+	Buzzer_Init();
 	
 	TIM3_Int_Init(100 - 1, 7200 - 1); //10ms PID control
 	
+	buzzer = 1;
 	while(1)
 	{
-		;
+		buzzer = !buzzer;
+		delay_ms(100);
 	}
 }

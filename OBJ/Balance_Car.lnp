@@ -10,6 +10,7 @@
 "..\obj\mpu6050.o"
 "..\obj\kalman_filter.o"
 "..\obj\pid.o"
+"..\obj\buzzer.o"
 "..\obj\delay.o"
 "..\obj\sys.o"
 "..\obj\usart.o"
