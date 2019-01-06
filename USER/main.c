@@ -10,6 +10,8 @@
 #include "kalman_filter.h"
 #include "pid.h"
 #include "buzzer.h"
+#include "nrf24l01.h"
+#include "spi.h"
 
 
 int main(void)
@@ -28,6 +30,10 @@ int main(void)
 	delay_ms(300);
 	MPU6050_Init();
 	Buzzer_Init();
+	Init();//SPI Init
+	NRF_Init(4, 80);
+	
+	printf("NRF Init %s!\r\n", (NRF_Check()) ? "OK" : "FAIL!");
 	
 	TIM3_Int_Init(100 - 1, 7200 - 1); //10ms PID control
 	
