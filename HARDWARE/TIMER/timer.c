@@ -28,18 +28,13 @@ void TIM3_Int_Init(u16 arr,u16 psc)
 
 void TIM3_IRQHandler(void)   //TIM3中断
 {
-	int Encoder;
 	uint16_t speed;
 	LED = 1;
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) //检查指定的TIM中断发生与否:TIM 中断源 
 	{
-		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);  //清除TIMx的中断待处理位:TIM 中断源 
-		LED = 1;
-		Encoder = -(TIM2_EncoderRead() + TIM4_EncoderRead())/2;
-		TIM2_EncoderWrite(0);
-		TIM4_EncoderWrite(0);
+		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);  //清除TIMx的中断待处理位:TIM 中断源
 		Angle_Calcu();
-		speed = -velocity(Encoder,Encoder)-balance(Angle, Angle_dot);
+		speed = - velocity(-TIM4_EncoderRead(),TIM2_EncoderRead()) - balance(Angle, Angle_dot);
 		Motor_SpeedControl(speed, speed);
 	}
 	LED = 0;

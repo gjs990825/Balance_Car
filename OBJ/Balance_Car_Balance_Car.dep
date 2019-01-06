@@ -1,6 +1,6 @@
 Dependencies for Project 'Balance_Car', Target 'Balance_Car': (DO NOT MODIFY !)
-F (.\main.c)(0x5C317280)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\KALMAN_FILTER -I ..\HARDWARE\PID -I ..\HARDWARE\BUZZER-I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
-I (..\HARDWARE\LED\led.h)(0x5BDAF5E6)
+F (.\main.c)(0x5C3181A5)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\KALMAN_FILTER -I ..\HARDWARE\PID -I ..\HARDWARE\BUZZER-I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (..\HARDWARE\LED\led.h)(0x5C317C2E)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -34,7 +34,7 @@ I (..\SYSTEM\delay\delay.h)(0x555AC82B)
 I (..\SYSTEM\usart\usart.h)(0x5BE3F2D1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
 I (..\HARDWARE\TIMER\timer.h)(0x5BE2750F)
-I (..\HARDWARE\ENCODER\encoder.h)(0x5BDFA6C4)
+I (..\HARDWARE\ENCODER\encoder.h)(0x5C31802B)
 I (..\HARDWARE\PID\pid.h)(0x5BE2A2E5)
 I (..\HARDWARE\MOTOR\motor.h)(0x5C2EC549)
 I (..\HARDWARE\KALMAN_FILTER\kalman_filter.h)(0x5BDFD102)
@@ -103,8 +103,8 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (..\HARDWARE\LED\led.c)(0x5BDAF5E9)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\KALMAN_FILTER -I ..\HARDWARE\PID -I ..\HARDWARE\BUZZER-I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
-I (..\HARDWARE\LED\led.h)(0x5BDAF5E6)
+F (..\HARDWARE\LED\led.c)(0x5C317C3D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\KALMAN_FILTER -I ..\HARDWARE\PID -I ..\HARDWARE\BUZZER-I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
+I (..\HARDWARE\LED\led.h)(0x5C317C2E)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -134,7 +134,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (..\HARDWARE\TIMER\timer.c)(0x5C316D35)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\KALMAN_FILTER -I ..\HARDWARE\PID -I ..\HARDWARE\BUZZER-I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+F (..\HARDWARE\TIMER\timer.c)(0x5C31A3E8)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\KALMAN_FILTER -I ..\HARDWARE\PID -I ..\HARDWARE\BUZZER-I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
 I (..\HARDWARE\TIMER\timer.h)(0x5BE2750F)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
@@ -165,10 +165,10 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (..\HARDWARE\LED\led.h)(0x5BDAF5E6)
+I (..\HARDWARE\LED\led.h)(0x5C317C2E)
 I (..\SYSTEM\usart\usart.h)(0x5BE3F2D1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
-I (..\HARDWARE\ENCODER\encoder.h)(0x5BDFA6C4)
+I (..\HARDWARE\ENCODER\encoder.h)(0x5C31802B)
 I (..\HARDWARE\PID\pid.h)(0x5BE2A2E5)
 I (..\HARDWARE\MOTOR\motor.h)(0x5C2EC549)
 I (..\HARDWARE\KALMAN_FILTER\kalman_filter.h)(0x5BDFD102)
@@ -208,8 +208,8 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (..\SYSTEM\usart\usart.h)(0x5BE3F2D1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
-F (..\HARDWARE\ENCODER\encoder.c)(0x5BDFAD51)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\KALMAN_FILTER -I ..\HARDWARE\PID -I ..\HARDWARE\BUZZER-I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\encoder.o --omf_browse ..\obj\encoder.crf --depend ..\obj\encoder.d)
-I (..\HARDWARE\ENCODER\encoder.h)(0x5BDFA6C4)
+F (..\HARDWARE\ENCODER\encoder.c)(0x5C31802D)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\KALMAN_FILTER -I ..\HARDWARE\PID -I ..\HARDWARE\BUZZER-I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\encoder.o --omf_browse ..\obj\encoder.crf --depend ..\obj\encoder.d)
+I (..\HARDWARE\ENCODER\encoder.h)(0x5C31802B)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -371,7 +371,7 @@ I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (..\HARDWARE\MOTOR\motor.h)(0x5C2EC549)
 I (..\SYSTEM\usart\usart.h)(0x5BE3F2D1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
-I (..\HARDWARE\ENCODER\encoder.h)(0x5BDFA6C4)
+I (..\HARDWARE\ENCODER\encoder.h)(0x5C31802B)
 I (..\HARDWARE\KALMAN_FILTER\kalman_filter.h)(0x5BDFD102)
 I (..\HARDWARE\MPU6050\mpu6050.h)(0x5BDFE357)
 I (..\HARDWARE\IIC\myiic.h)(0x5BDFB174)
@@ -502,7 +502,7 @@ I (..\SYSTEM\usart\usart.h)(0x5BE3F2D1)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x599EDB3C)
 F (..\CORE\core_cm3.c)(0x4C0C587E)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\KALMAN_FILTER -I ..\HARDWARE\PID -I ..\HARDWARE\BUZZER-I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\core_cm3.o --omf_browse ..\obj\core_cm3.crf --depend ..\obj\core_cm3.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x599EDB3E)
-F (..\CORE\startup_stm32f10x_md.s)(0x4D783CD2)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 526" --pd "STM32F10X_MD SETA 1"--list .\startup_stm32f10x_md.lst --xref -o ..\obj\startup_stm32f10x_md.o --depend ..\obj\startup_stm32f10x_md.d)
+F (..\CORE\startup_stm32f10x_md.s)(0x5C318AAE)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 526" --pd "STM32F10X_MD SETA 1"--list .\startup_stm32f10x_md.lst --xref -o ..\obj\startup_stm32f10x_md.o --depend ..\obj\startup_stm32f10x_md.d)
 F (..\STM32F10x_FWLib\src\misc.c)(0x4D783BB4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\MOTOR -I ..\HARDWARE\ENCODER -I ..\HARDWARE\IIC -I ..\HARDWARE\MPU6050 -I ..\HARDWARE\KALMAN_FILTER -I ..\HARDWARE\PID -I ..\HARDWARE\BUZZER-I.\RTE\_Balance_Car-IC:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="526" -DSTM32F10X_MD -DSTM32F10X_MD -DUSE_STDPERIPH_DRIVER-o ..\obj\misc.o --omf_browse ..\obj\misc.crf --depend ..\obj\misc.d)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (..\USER\stm32f10x.h)(0x4D783CB4)
@@ -648,4 +648,4 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (..\README.TXT)(0x5BED011B)()
+F (..\README.TXT)(0x5C317D03)()

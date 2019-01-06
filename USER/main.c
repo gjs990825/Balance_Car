@@ -12,7 +12,6 @@
 #include "buzzer.h"
 
 
-
 int main(void)
 {
 	//System initialize
@@ -36,6 +35,8 @@ int main(void)
 	while(1)
 	{
 		buzzer = !buzzer;
-		delay_ms(100);
+		LED1 = !LED1;
+		LED2 = !LED2;
+		delay_ms(50);
 	}
 }

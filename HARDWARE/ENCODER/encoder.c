@@ -71,22 +71,29 @@ void TIM2_EncoderInit(uint16_t arr, uint16_t psc)
 }
 
 
-void TIM4_EncoderWrite(int data)
+// void TIM4_EncoderWrite(int data)
+// {
+//     TIM4->CNT = data;
+// }
+
+int16_t TIM4_EncoderRead(void)
 {
-    TIM4->CNT = data;
+	int16_t tmp = 0;
+	tmp = (-(int16_t)(TIM4->CNT));
+	TIM4->CNT = 0;
+    return tmp;
 }
 
-int TIM4_EncoderRead(void)
-{
-    return (int)(-(int16_t)(TIM4->CNT));
-}
+// void TIM2_EncoderWrite(int data)
+// {
+//     TIM2->CNT = data;
+// }
 
-void TIM2_EncoderWrite(int data)
+int16_t TIM2_EncoderRead(void)
 {
-    TIM2->CNT = data;
-}
-
-int TIM2_EncoderRead(void)
-{
-    return (int)((int16_t)(TIM2->CNT));
+	int16_t tmp = 0;
+	tmp = (-(int16_t)(TIM2->CNT));
+	TIM2->CNT = 0;
+    return tmp;
+    // return (int)((int16_t)(TIM2->CNT));
 }
