@@ -7,6 +7,8 @@
 #include "encoder.h"
 #include "pid.h"
 
-void TIM3_Int_Init(u16 arr,u16 psc);
+extern vu16 currentMs;
+
+void TIM3_TimerInit(u16 arr,u16 psc);
 
 #endif

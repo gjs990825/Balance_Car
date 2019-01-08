@@ -9,11 +9,11 @@
 void TIM4_EncoderInit(uint16_t arr, uint16_t psc);
 void TIM2_EncoderInit(uint16_t arr, uint16_t psc);
 
-void TIM4_EncoderWrite(int data);
-int TIM4_EncoderRead(void);
+// void TIM4_EncoderWrite(int data);
+// void TIM2_EncoderWrite(int data);
 
-void TIM2_EncoderWrite(int data);
-int TIM2_EncoderRead(void);
+int16_t TIM4_EncoderRead(void);
+int16_t TIM2_EncoderRead(void);
 
 
 

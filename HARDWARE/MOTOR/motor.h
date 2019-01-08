@@ -4,9 +4,9 @@
 #include "sys.h"
 #include "usart.h"
 
-#define ML_1 PBout(14)//A15
+#define ML_1 PBout(14)
 #define ML_2 PAout(12)
-#define MR_1 PBout(15)//B3
+#define MR_1 PBout(15)
 #define MR_2 PBout(4)
 
 #define STOP	0

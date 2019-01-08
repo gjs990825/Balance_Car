@@ -1,11 +1,12 @@
 #include "motor.h"
+#include "Protocol.h"
 
-#define TURN_SPEED_R 250	//Turnning speed set
-#define TURN_SPEED_L 50
+#define TURN_SPEED_R 100	//Turnning speed set
+#define TURN_SPEED_L 100
 
 #define STEP_LENTH	5	//越小越平滑，但响应速度变慢
 
-#define CORRECT	20
+#define CORRECT	0
 
 
 void Motor_Right(uint8_t dir)
@@ -91,6 +92,11 @@ void Motor_SpeedControl(int16_t speed_l, int16_t speed_r)
 		sr = -900;
 	else
 		sr = speed_r;
+		
+	if (Xoffset != 0) {
+		sr += Xoffset;
+		sl -= Xoffset;
+	}
 	
 	if(CMD == CMD_LEFT)//Excute left or right cmd
 	{
@@ -157,7 +163,6 @@ void Motor_SpeedControl(int16_t speed_l, int16_t speed_r)
 		{
 			sl += CORRECT;
 		}
-		
 	}
 	
 	if(sl == 0)
