@@ -1,8 +1,8 @@
 #include "timer.h"
 
-vu16 currentMs = 0;
 
-void TIM3_TimerInit(u16 arr,u16 psc)
+
+void TIM3_Int_Init(u16 arr,u16 psc)
 {
 	TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 	NVIC_InitTypeDef NVIC_InitStructure;
@@ -14,8 +14,6 @@ void TIM3_TimerInit(u16 arr,u16 psc)
 	TIM_TimeBaseStructure.TIM_ClockDivision = 0; //设置时钟分割:TDTS = Tck_tim
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  //TIM向上计数模式
 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure); //根据TIM_TimeBaseInitStruct中指定的参数初始化TIMx的时间基数单位
-
-	TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
  
 	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
 	NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;  //TIM3中断
@@ -30,16 +28,22 @@ void TIM3_TimerInit(u16 arr,u16 psc)
 
 void TIM3_IRQHandler(void)   //TIM3中断
 {
+	int Encoder;
 	uint16_t speed;
-	LED = 1;
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) //检查指定的TIM中断发生与否:TIM 中断源 
-	{
-		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);  //清除TIMx的中断待处理位:TIM 中断源
-		Angle_Calcu();
-		speed = - velocity(-TIM4_EncoderRead(),TIM2_EncoderRead()) - balance(Angle, Angle_dot);
-		Motor_SpeedControl(speed, speed);
-	}
-	LED = 0;
-	currentMs += 10;
+		{
+			TIM_ClearITPendingBit(TIM3, TIM_IT_Update);  //清除TIMx的中断待处理位:TIM 中断源 
+			LED=!LED;
+			Encoder = -(TIM2_EncoderRead() + TIM4_EncoderRead())/2;
+			TIM2_EncoderWrite(0);
+			TIM4_EncoderWrite(0);
+			Angle_Calcu();
+			//speed = Position_PI(Encoder, 600);
+			//speed = Incremental_PI(Encoder, 6);
+			//speed = -balance(Angle, Angle_dot);
+			speed = -velocity(Encoder,Encoder)-balance(Angle, Angle_dot);;
+			//speed = Position_Con(speed);
+			Motor_SpeedControl(speed, speed);
+		}
 }
 
