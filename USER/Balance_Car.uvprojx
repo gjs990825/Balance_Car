@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\TIMER;..\HARDWARE\MOTOR;..\HARDWARE\ENCODER;..\HARDWARE\IIC;..\HARDWARE\MPU6050;..\HARDWARE\KALMAN_FILTER;..\HARDWARE\PID;..\HARDWARE\BUZZER;..\HARDWARE\SPI;..\HARDWARE\NRF24L01;..\APP</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\TIMER;..\HARDWARE\MOTOR;..\HARDWARE\ENCODER;..\HARDWARE\IIC;..\HARDWARE\MPU6050;..\HARDWARE\KALMAN_FILTER;..\HARDWARE\PID</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -400,16 +400,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>APP</GroupName>
-          <Files>
-            <File>
-              <FileName>Protocol.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\APP\Protocol.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>HARDWARE</GroupName>
           <Files>
             <File>
@@ -451,21 +441,6 @@
               <FileName>pid.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\PID\pid.c</FilePath>
-            </File>
-            <File>
-              <FileName>buzzer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\BUZZER\buzzer.c</FilePath>
-            </File>
-            <File>
-              <FileName>spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\SPI\spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>nrf24l01.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\NRF24L01\nrf24l01.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -531,16 +506,6 @@
               <FileName>stm32f10x_usart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\STM32F10x_FWLib\src\stm32f10x_usart.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_spi.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\STM32F10x_FWLib\src\stm32f10x_spi.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f10x_exti.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\STM32F10x_FWLib\src\stm32f10x_exti.c</FilePath>
             </File>
           </Files>
         </Group>
