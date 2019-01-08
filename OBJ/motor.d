@@ -32,3 +32,4 @@
 ..\obj\motor.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\motor.o: ..\SYSTEM\usart\usart.h
 ..\obj\motor.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\motor.o: ..\APP\Protocol.h

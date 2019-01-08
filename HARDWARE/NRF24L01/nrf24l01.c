@@ -45,6 +45,7 @@ u8	TX_ADDRESS[TX_ADR_WIDTH] = {0xAA,0xBB,0xCC,0x00,0x01};	//本地地址
 u8	RX_ADDRESS[RX_ADR_WIDTH] = {0xAA,0xBB,0xCC,0x00,0x01};	//接收地址	
 
 uint8_t RxBuf[RX_PLOAD_WIDTH] = {0};
+uint8_t rx_len = 0;
 	
 /*
 *****************************************************************
@@ -132,6 +133,69 @@ void NRF_TxPacket_AP(uint8_t * tx_buf, uint8_t len)
 }
 
 
+void NRF_IRQ_Enable(void)
+{
+	GPIO_InitTypeDef GPIO_InitStructure;
+	EXTI_InitTypeDef EXTI_InitStructure;
+	NVIC_InitTypeDef NVIC_InitStructure;
+
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
+
+	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_0; 
+	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz; 
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU; //上拉输入
+	GPIO_Init(GPIOB, &GPIO_InitStructure);
+
+	GPIO_EXTILineConfig(GPIO_PortSourceGPIOB, GPIO_PinSource0);
+	EXTI_InitStructure.EXTI_Line = EXTI_Line0;
+	EXTI_InitStructure.EXTI_LineCmd = ENABLE;
+	EXTI_InitStructure.EXTI_Mode = EXTI_Mode_Interrupt;
+	EXTI_InitStructure.EXTI_Trigger = EXTI_Trigger_Falling;
+	EXTI_Init(&EXTI_InitStructure);
+
+	NVIC_InitStructure.NVIC_IRQChannel = EXTI0_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 1;
+	NVIC_Init(&NVIC_InitStructure);
+}
+
+void NRF_IRQ(void)
+{
+	uint8_t status = NRF_Read_Reg(NRF_READ_REG + NRFRegSTATUS);
+
+	if(status & (1<<RX_DR))//接收中断
+	{
+		rx_len = NRF_Read_Reg(R_RX_PL_WID);
+		if(rx_len<33)
+		{
+			NRF_Read_Buf(RD_RX_PLOAD, RxBuf, rx_len);//接收
+		}
+		else 
+		{
+			NRF_Write_Reg(FLUSH_RX,0xff);//清空缓冲区
+		}
+	}
+	if(status & (1<<MAX_RT))//达到最多次重发中断
+	{
+		if(status & (1 << 0))//TX FIFO 溢出
+		{
+			NRF_Write_Reg(FLUSH_TX,0xff);//清空发送缓冲区
+		}
+	}
+	NRF_Write_Reg(NRF_WRITE_REG + NRFRegSTATUS, status);//清除中断标志位
+}
+
+void EXTI0_IRQHandler(void)
+{
+	if (EXTI_GetITStatus(EXTI_Line0) == SET)
+	{
+		EXTI_ClearITPendingBit(EXTI_Line0);
+		NRF_IRQ();
+	}
+	
+}
+
 
 void NRF_Init(u8 model, u8 ch)
 {
@@ -180,6 +244,7 @@ void NRF_Init(u8 model, u8 ch)
 		NRF_Write_Reg(NRF_WRITE_REG+0x1d,0x06);
 	}
 	CE_H();
+	NRF_IRQ_Enable();
 }
 
 uint8_t NRF_Check(void)

@@ -1,8 +1,8 @@
 #include "timer.h"
 
+vu16 currentMs = 0;
 
-
-void TIM3_Int_Init(u16 arr,u16 psc)
+void TIM3_TimerInit(u16 arr,u16 psc)
 {
 	TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
 	NVIC_InitTypeDef NVIC_InitStructure;
@@ -40,5 +40,6 @@ void TIM3_IRQHandler(void)   //TIM3ÖÐ¶Ï
 		Motor_SpeedControl(speed, speed);
 	}
 	LED = 0;
+	currentMs += 10;
 }
 

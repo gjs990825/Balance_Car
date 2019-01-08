@@ -4,6 +4,8 @@
         "encoder.h": "c",
         "timer.h": "c",
         "mpu6050.h": "c",
-        "nrf24l01.h": "c"
+        "nrf24l01.h": "c",
+        "protocol.h": "c",
+        "usart.h": "c"
     }
 }

@@ -25,6 +25,7 @@ uint8_t NRF_Check(void);
 //检查是否有通信事件
 uint8_t NRF_Check_Event(void);
 
+extern uint8_t rx_len;
 extern uint8_t RxBuf[RX_PLOAD_WIDTH];
 
 

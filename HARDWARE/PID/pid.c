@@ -1,11 +1,13 @@
 #include "pid.h"
+#include "Protocol.h"
 
+//蓝牙遥控的行进速度
 const int Movement_S = 130;
 
 //速度环的参数
 int PWM = 0;
 float Speed_r_l = 0, Speed = 0, Position = 0;
-int16_t Movement = 0;   //表示小车的目标速度
+int16_t Movement = 0;   //目标速度
 
 
 /***************************************************************************
@@ -15,16 +17,15 @@ int16_t Movement = 0;   //表示小车的目标速度
 int balance(float Angle, float gy)
 {
 //	float Bias, Kp = 75, Kd = 15; 
-	float Bias, Kp = 75, Kd = 15;       //具体的kp和kd的值，在实际应用中需要不断的调试
+	float Bias, Kp = 75, Kd = 15;
 	int balance;                           //直立PWM的返回值
 	
-	if(Angle<-40 || Angle>40)               //角度过大，关闭电机 
+	if(Angle<-40 || Angle>40)
 	{
 	    return 0;
 	}
 	
-	
-  Bias = Angle + 2.54;                      //直立的偏差
+	Bias = Angle + 2.54;                      //直立的偏差
 	balance = Kp * Bias + gy * Kd;        //计算直立的PWM
 
 	return balance;
@@ -53,11 +54,15 @@ int velocity(int16_t Speed_left, int16_t Speed_right)             //平衡小车的控
 		Movement = 0;
 	}
 	
+	if (Yoffset != 0) { //遥控指令执行
+		Movement += Yoffset;
+	}
+	
+	
 	Speed_r_l =  Speed_left + Speed_right;       
 	
 	Speed =  Speed * 0.8;                               //低通滤波，目的是为了减缓速度值的变化，防止速度控制对直立造成干扰，
-  Speed = Speed + Speed_r_l *0.2;                     //因为平衡小车系统里面，直立控制是主要的，其他控制对于直立来说都是一种干扰
-	
+	Speed = Speed + Speed_r_l *0.2;                     //因为平衡小车系统里面，直立控制是主要的，其他控制对于直立来说都是一种干扰
 	
 	Position += Speed;                        //偏差积分得到小车的位移
 	
@@ -65,7 +70,7 @@ int velocity(int16_t Speed_left, int16_t Speed_right)             //平衡小车的控
 	
 	if(Position > 100000)  	
 		Position = 100000;               //===积分限幅
-  if(Position < -100000)	
+	if(Position < -100000)	
 		Position = -100000;              //===积分限幅	
 	
 	PWM = Kp * Speed + Ki * Position;                   //速度和位置

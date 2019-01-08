@@ -19,7 +19,8 @@
                 "${workspaceFolder}/HARDWARE/IIC",
                 "${workspaceFolder}/HARDWARE/MPU6050",
                 "${workspaceFolder}/HARDWARE/KALMAN_FILTER",
-                "${workspaceFolder}/HARDWARE/PID"
+                "${workspaceFolder}/HARDWARE/PID",
+                "${workspaceFolder}/APP"
             ],
             "defines": [
                 "_DEBUG",
