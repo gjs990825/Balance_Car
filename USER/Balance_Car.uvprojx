@@ -433,11 +433,6 @@
               <FilePath>..\HARDWARE\ENCODER\encoder.c</FilePath>
             </File>
             <File>
-              <FileName>myiic.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\IIC\myiic.c</FilePath>
-            </File>
-            <File>
               <FileName>mpu6050.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\MPU6050\mpu6050.c</FilePath>
@@ -466,6 +461,11 @@
               <FileName>nrf24l01.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\NRF24L01\nrf24l01.c</FilePath>
+            </File>
+            <File>
+              <FileName>iic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\IIC\iic.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -1,7 +1,7 @@
 #include "spi.h"
 
 
-void Init(void)
+void Hard_SPIInit(void)
 {
 	SPI_InitTypeDef SPI_InitStructure; 
 	GPIO_InitTypeDef GPIO_InitStructure;

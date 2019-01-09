@@ -4,7 +4,7 @@
 #include "sys.h"
 
 
-void 	Init(void);
+void 	Hard_SPIInit(void);
 uint8_t RW(u8 dat);
 void 	CE_H(void);
 void 	CE_L(void);

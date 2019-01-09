@@ -26,11 +26,24 @@
 #define	GYRO_ZOUT_L		0x48
 #define	PWR_MGMT_1		0x6B	//电源管理，典型值：0x00(正常启用)
 #define	WHO_AM_I		0x75	//IIC地址寄存器(默认数值0x68，只读)
-#define	SlaveAddress	0xD0	//IIC写入时的地址字节数据，+1为读取
+//#define	SlaveAddress	0xD0	//IIC写入时的地址字节数据，+1为读取
 
-void MPU6050_Init(void);
-void MPU6050_WriteOneByte(uint8_t REG_Adress, uint8_t REG_Data);
-uint8_t MPU6050_ReadOneByte(u8 REG_Address);
-int16_t Out_Data(u8 REG_Address);
+// void MPU6050_Init(void);
+// void MPU6050_WriteOneByte(uint8_t REG_Adress, uint8_t REG_Data);
+// uint8_t MPU6050_ReadOneByte(u8 REG_Address);
+// int16_t Out_Data(u8 REG_Address);
+
+
+#define CALIBRATING_GYRO_CYCLES             1000
+#define CALIBRATING_ACC_CYCLES              400
+
+
+void MPU6050_Init(uint16_t sample_rate, uint16_t lpf);
+int16_t MPU6050_Get_Data(uint8_t addr);
+uint8_t MPU6050_Sequence_Read(void);
+void MPU6050_Single_Read(void);
+uint8_t MPU6050_Check(void);
+void MPU6050_Compose_Data(void);
+
 
 #endif

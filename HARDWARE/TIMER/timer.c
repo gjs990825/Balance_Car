@@ -1,4 +1,5 @@
 #include "timer.h"
+#include "buzzer.h"
 
 vu16 currentMs = 0;
 
@@ -28,10 +29,12 @@ void TIM3_TimerInit(u16 arr,u16 psc)
 							 
 }
 
+#define DEBUG_PIN LED1
+
 void TIM3_IRQHandler(void)   //TIM3中断
 {
 	uint16_t speed;
-	LED = 1;
+	DEBUG_PIN = 0;
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) //检查指定的TIM中断发生与否:TIM 中断源 
 	{
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);  //清除TIMx的中断待处理位:TIM 中断源
@@ -39,7 +42,7 @@ void TIM3_IRQHandler(void)   //TIM3中断
 		speed = - velocity(-TIM4_EncoderRead(),TIM2_EncoderRead()) - balance(Angle, Angle_dot);
 		Motor_SpeedControl(speed, speed);
 	}
-	LED = 0;
-	currentMs += 10;
+	DEBUG_PIN = 0;
+	currentMs += 12;
 }
 
