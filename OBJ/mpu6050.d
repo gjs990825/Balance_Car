@@ -30,5 +30,4 @@
 ..\obj\mpu6050.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\obj\mpu6050.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\mpu6050.o: ..\STM32F10x_FWLib\inc\misc.h
-..\obj\mpu6050.o: ..\HARDWARE\IIC\myiic.h
 ..\obj\mpu6050.o: ..\HARDWARE\IIC\iic.h

@@ -31,5 +31,4 @@
 ..\obj\kalman_filter.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\kalman_filter.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\kalman_filter.o: ..\HARDWARE\MPU6050\mpu6050.h
-..\obj\kalman_filter.o: ..\HARDWARE\IIC\myiic.h
 ..\obj\kalman_filter.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

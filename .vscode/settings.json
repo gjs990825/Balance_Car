@@ -6,6 +6,9 @@
         "mpu6050.h": "c",
         "nrf24l01.h": "c",
         "protocol.h": "c",
-        "usart.h": "c"
+        "usart.h": "c",
+        "buzzer.h": "c",
+        "pid.h": "c",
+        "kalman_filter.h": "c"
     }
 }

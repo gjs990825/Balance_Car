@@ -38,6 +38,5 @@
 ..\obj\timer.o: ..\HARDWARE\MOTOR\motor.h
 ..\obj\timer.o: ..\HARDWARE\KALMAN_FILTER\kalman_filter.h
 ..\obj\timer.o: ..\HARDWARE\MPU6050\mpu6050.h
-..\obj\timer.o: ..\HARDWARE\IIC\myiic.h
 ..\obj\timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\timer.o: ..\HARDWARE\BUZZER\buzzer.h

@@ -39,7 +39,6 @@
 ..\obj\main.o: ..\HARDWARE\MOTOR\motor.h
 ..\obj\main.o: ..\HARDWARE\KALMAN_FILTER\kalman_filter.h
 ..\obj\main.o: ..\HARDWARE\MPU6050\mpu6050.h
-..\obj\main.o: ..\HARDWARE\IIC\myiic.h
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\main.o: ..\HARDWARE\BUZZER\buzzer.h
 ..\obj\main.o: ..\HARDWARE\NRF24L01\nrf24l01.h

@@ -2,7 +2,6 @@
 #define _MPU6050_H_
 
 #include "sys.h"
-#include "myiic.h"
 
 
 // 定义MPU6050内部地址
