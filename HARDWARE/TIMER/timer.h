@@ -7,9 +7,10 @@
 #include "encoder.h"
 #include "pid.h"
 
-extern vu16 currentMs;
+extern vu16 currentMs1, currentMs2, currentMs3;
+extern vs16 currentSpeed;
 extern vu8 tim3_int_flag;
 
-void TIM3_TimerInit(u16 arr,u16 psc);
+void TIM3_TimerInit(uint16_t arr, uint16_t psc);
 
 #endif

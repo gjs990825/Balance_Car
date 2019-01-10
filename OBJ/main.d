@@ -47,3 +47,4 @@
 ..\obj\main.o: ..\HARDWARE\IIC\iic.h
 ..\obj\main.o: ..\HARDWARE\HCSR04\hcsr04.h
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\main.o: ..\APP\task.h

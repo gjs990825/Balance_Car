@@ -8,6 +8,6 @@
 
 
 int balance(float Angle, float gy);
-int velocity(int16_t Speed_left, int16_t Speed_right);
+int velocity(int16_t curSpeed);
 
 #endif

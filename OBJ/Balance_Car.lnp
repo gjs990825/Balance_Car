@@ -3,6 +3,7 @@
 "..\obj\stm32f10x_it.o"
 "..\obj\system_stm32f10x.o"
 "..\obj\protocol.o"
+"..\obj\task.o"
 "..\obj\led.o"
 "..\obj\timer.o"
 "..\obj\motor.o"

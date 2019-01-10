@@ -338,7 +338,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_MD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\TIMER;..\HARDWARE\MOTOR;..\HARDWARE\ENCODER;..\HARDWARE\IIC;..\HARDWARE\MPU6050;..\HARDWARE\KALMAN_FILTER;..\HARDWARE\PID;..\HARDWARE\BUZZER;..\HARDWARE\SPI;..\HARDWARE\NRF24L01;..\APP;..\HARDWARE\HCSR04</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\TIMER;..\HARDWARE\MOTOR;..\HARDWARE\ENCODER;..\HARDWARE\IIC;..\HARDWARE\MPU6050;..\HARDWARE\KALMAN_FILTER;..\HARDWARE\PID;..\HARDWARE\BUZZER;..\HARDWARE\SPI;..\HARDWARE\NRF24L01;..\APP;..\HARDWARE\HCSR04</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -406,6 +406,11 @@
               <FileName>Protocol.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\APP\Protocol.c</FilePath>
+            </File>
+            <File>
+              <FileName>task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\APP\task.c</FilePath>
             </File>
           </Files>
         </Group>

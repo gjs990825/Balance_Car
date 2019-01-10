@@ -16,14 +16,18 @@ void Soft_delay_us(u32 nTimer);
 void Soft_delay_ms(u32 nTimer);
 
 void HCSR04_Init(int minRange, int maxRange);
-unsigned int HCSR04_echoInMicroseconds(void);
+int HCSR04_echoInMicroseconds(void);
 int HCSR04_distanceInMillimeters(void);
+
+extern int _maxRange;
 
 typedef enum
 {
+    HCSR04_INTFAULT = -4,
     HCSR04_ERROR = -3,
     HCSR04_TIMEOUT = -2,
     HCSR04_OUTRANGE = -1
 } HCSR04_Status_TypeDef;
+//HCSR04 ×´Ì¬¶¨Òå
 
 #endif

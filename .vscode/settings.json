@@ -12,6 +12,9 @@
         "kalman_filter.h": "c",
         "sys.h": "c",
         "stm32f10x.h": "c",
-        "hcsr04.h": "c"
+        "hcsr04.h": "c",
+        "string.h": "c",
+        "task.h": "c",
+        "iic.h": "c"
     }
 }

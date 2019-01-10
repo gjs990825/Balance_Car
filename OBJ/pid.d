@@ -38,3 +38,7 @@
 ..\obj\pid.o: ..\HARDWARE\MPU6050\mpu6050.h
 ..\obj\pid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\pid.o: ..\APP\Protocol.h
+..\obj\pid.o: ..\HARDWARE\TIMER\timer.h
+..\obj\pid.o: ..\HARDWARE\LED\led.h
+..\obj\pid.o: ..\APP\task.h
+..\obj\pid.o: ..\HARDWARE\BUZZER\buzzer.h
