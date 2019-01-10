@@ -43,4 +43,5 @@
 ..\obj\main.o: ..\HARDWARE\BUZZER\buzzer.h
 ..\obj\main.o: ..\HARDWARE\NRF24L01\nrf24l01.h
 ..\obj\main.o: ..\HARDWARE\SPI\spi.h
+..\obj\main.o: ..\APP\Protocol.h
 ..\obj\main.o: ..\HARDWARE\IIC\iic.h

@@ -11,6 +11,7 @@
 #include "pid.h"
 #include "buzzer.h"
 #include "nrf24l01.h"
+#include "Protocol.h"
 #include "spi.h"
 #include "iic.h"
 #include "mpu6050.h"
@@ -20,7 +21,7 @@ int main(void)
 {
 	const uint16_t reportTime = 1000;
 	//System initialize
-	uart_init(115200);
+	Uart_init(115200);
 	delay_init();
 	NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);
 	
