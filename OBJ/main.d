@@ -35,9 +35,9 @@
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: ..\HARDWARE\TIMER\timer.h
 ..\obj\main.o: ..\HARDWARE\ENCODER\encoder.h
-..\obj\main.o: ..\HARDWARE\PID\pid.h
+..\obj\main.o: ..\APP\pid.h
 ..\obj\main.o: ..\HARDWARE\MOTOR\motor.h
-..\obj\main.o: ..\HARDWARE\KALMAN_FILTER\kalman_filter.h
+..\obj\main.o: ..\APP\kalman_filter.h
 ..\obj\main.o: ..\HARDWARE\MPU6050\mpu6050.h
 ..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\main.o: ..\HARDWARE\BUZZER\buzzer.h

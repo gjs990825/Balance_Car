@@ -1,5 +1,5 @@
-..\obj\kalman_filter.o: ..\HARDWARE\KALMAN_FILTER\kalman_filter.c
-..\obj\kalman_filter.o: ..\HARDWARE\KALMAN_FILTER\kalman_filter.h
+..\obj\kalman_filter.o: ..\APP\kalman_filter.c
+..\obj\kalman_filter.o: ..\APP\kalman_filter.h
 ..\obj\kalman_filter.o: ..\SYSTEM\sys\sys.h
 ..\obj\kalman_filter.o: ..\USER\stm32f10x.h
 ..\obj\kalman_filter.o: ..\CORE\core_cm3.h

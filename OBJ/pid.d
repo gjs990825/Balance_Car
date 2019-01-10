@@ -1,5 +1,5 @@
-..\obj\pid.o: ..\HARDWARE\PID\pid.c
-..\obj\pid.o: ..\HARDWARE\PID\pid.h
+..\obj\pid.o: ..\APP\pid.c
+..\obj\pid.o: ..\APP\pid.h
 ..\obj\pid.o: ..\SYSTEM\sys\sys.h
 ..\obj\pid.o: ..\USER\stm32f10x.h
 ..\obj\pid.o: ..\CORE\core_cm3.h
@@ -34,7 +34,7 @@
 ..\obj\pid.o: ..\SYSTEM\usart\usart.h
 ..\obj\pid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\pid.o: ..\HARDWARE\ENCODER\encoder.h
-..\obj\pid.o: ..\HARDWARE\KALMAN_FILTER\kalman_filter.h
+..\obj\pid.o: ..\APP\kalman_filter.h
 ..\obj\pid.o: ..\HARDWARE\MPU6050\mpu6050.h
 ..\obj\pid.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
 ..\obj\pid.o: ..\APP\Protocol.h
