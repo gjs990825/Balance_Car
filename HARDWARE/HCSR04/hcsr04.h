@@ -1,22 +1,29 @@
 #ifndef HCSR04_h
 #define HCSR04_h
 
-#include "Arduino.h"
+#include "sys.h"
 
-class HCSR04
+#define GPIO_HCSR04	        GPIOB
+#define HCSR04_PIN_ECHO		GPIO_Pin_13
+#define HCSR04_PIN_TRIGGER	GPIO_Pin_12
+#define RCC_HCSR04	        RCC_APB2Periph_GPIOB
+
+#define TRIGGER_H() GPIO_SetBits(GPIO_HCSR04, HCSR04_PIN_TRIGGER)
+#define TRIGGER_L() GPIO_ResetBits(GPIO_HCSR04, HCSR04_PIN_TRIGGER)
+#define ECHO_READ() GPIO_ReadInputDataBit(GPIO_HCSR04, HCSR04_PIN_ECHO)
+
+void Soft_delay_us(u32 nTimer);
+void Soft_delay_ms(u32 nTimer);
+
+void HCSR04_Init(int minRange, int maxRange);
+unsigned int HCSR04_echoInMicroseconds(void);
+int HCSR04_distanceInMillimeters(void);
+
+typedef enum
 {
-  public:
-    HCSR04(int trigger, int echo);
-	HCSR04(int trigger, int echo, int minRange, int maxRange);
-    unsigned int echoInMicroseconds();
-    int distanceInMillimeters();
-    void ToSerial();
-    String ToString();
-  private:
-    int _trigger;
-    int _echo;
-	int _minRange = -1;
-	int _maxRange = -1;
-};
+    HCSR04_ERROR = -3,
+    HCSR04_TIMEOUT = -2,
+    HCSR04_OUTRANGE = -1
+} HCSR04_Status_TypeDef;
 
 #endif

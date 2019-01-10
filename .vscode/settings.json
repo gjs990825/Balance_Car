@@ -9,6 +9,9 @@
         "usart.h": "c",
         "buzzer.h": "c",
         "pid.h": "c",
-        "kalman_filter.h": "c"
+        "kalman_filter.h": "c",
+        "sys.h": "c",
+        "stm32f10x.h": "c",
+        "hcsr04.h": "c"
     }
 }

@@ -2,6 +2,7 @@
 #include "buzzer.h"
 
 vu16 currentMs = 0;
+vu8 tim3_int_flag = 0;
 
 void TIM3_TimerInit(u16 arr,u16 psc)
 {
@@ -35,6 +36,7 @@ void TIM3_IRQHandler(void)   //TIM3中断
 {
 	uint16_t speed;
 	DEBUG_PIN = 0;
+	tim3_int_flag = 1;
 	if (TIM_GetITStatus(TIM3, TIM_IT_Update) != RESET) //检查指定的TIM中断发生与否:TIM 中断源 
 	{
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update);  //清除TIMx的中断待处理位:TIM 中断源

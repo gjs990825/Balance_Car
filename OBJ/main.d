@@ -45,3 +45,5 @@
 ..\obj\main.o: ..\HARDWARE\SPI\spi.h
 ..\obj\main.o: ..\APP\Protocol.h
 ..\obj\main.o: ..\HARDWARE\IIC\iic.h
+..\obj\main.o: ..\HARDWARE\HCSR04\hcsr04.h
+..\obj\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

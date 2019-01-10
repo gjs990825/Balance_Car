@@ -46,6 +46,8 @@ u8	RX_ADDRESS[RX_ADR_WIDTH] = {0xAA,0xBB,0xCC,0x00,0x01};	//Ω” ’µÿ÷∑
 
 uint8_t RxBuf[RX_PLOAD_WIDTH] = {0};
 uint8_t rx_len = 0;
+
+vu8 nrf_int_flag = 0;
 	
 /*
 *****************************************************************
@@ -188,6 +190,7 @@ void NRF_IRQ(void)
 
 void EXTI0_IRQHandler(void)
 {
+	nrf_int_flag = 1;
 	if (EXTI_GetITStatus(EXTI_Line0) == SET)
 	{
 		EXTI_ClearITPendingBit(EXTI_Line0);

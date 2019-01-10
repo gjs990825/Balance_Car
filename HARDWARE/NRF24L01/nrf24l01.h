@@ -28,6 +28,8 @@ uint8_t NRF_Check_Event(void);
 extern uint8_t rx_len;
 extern uint8_t RxBuf[RX_PLOAD_WIDTH];
 
+extern vu8 nrf_int_flag;
+
 
 extern uint8_t NRF24L01_2_RXDATA[RX_PLOAD_WIDTH];//nrf24l01接收到的数据
 extern uint8_t NRF24L01_2_TXDATA[RX_PLOAD_WIDTH];//nrf24l01需要发送的数据

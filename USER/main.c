@@ -15,11 +15,16 @@
 #include "spi.h"
 #include "iic.h"
 #include "mpu6050.h"
+#include "hcsr04.h"
+#include "string.h"
 
+#define BUFFERSIZE 32
 
 int main(void)
 {
-	const uint16_t reportTime = 1000;
+	const uint16_t reportTime = 400;
+	char buf[BUFFERSIZE] = {0};
+	int distance = 0;
 	//System initialize
 	Uart_init(115200);
 	delay_init();
@@ -44,16 +49,23 @@ int main(void)
 	TIM_Cmd(TIM3, ENABLE);// Timer3 enable
 
 	I2C_Soft_Init();
-	MPU6050_Init(125, 42);
+	MPU6050_Init(125, 42);//Set mpu6050 sampling rate to 125
+
+	HCSR04_Init(0, 400);//Initialize HC-SR04 and set distance range from 0 to 40 cm
 	
 	while(1)
 	{
 		LED = !LED;
 		if (currentMs > reportTime) {
-			NRF_TxPacket_AP((uint8_t *)"System running...", 18);
-			printf("System running...\r\n");
-			printf("angle = %7.4f, dot  = %7.4f\r\n", Angle, Angle_dot);
+			distance = HCSR04_distanceInMillimeters();
+			if (distance > 0) { //If no interrupt or out range
+				sprintf(buf, "Distance = %2d", distance);
+				NRF_TxPacket_AP((uint8_t *)buf, strlen(buf));
+				memset(buf, 0, sizeof(buf[0]) * BUFFERSIZE); //clear buf
+			}
+			printf("System running...\r\n"); //serial print
 			currentMs = 0;
+			// currentMs -= reportTime; //for missing time
 		}
 		if (rx_len != 0) {
 			rx_len = 0;
