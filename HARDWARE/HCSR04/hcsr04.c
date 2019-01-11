@@ -1,14 +1,18 @@
 #include "HCSR04.h"
 #include "nrf24l01.h"
 #include "timer.h"
+#include "delay.h"
 
-
-#define ECHO_TIMEOUT 3200u // 200cm * 32us/cm = 3200us//限制时间提升检测成功率
+//限制时间提升检测成功率
+#define ECHO_TIMEOUT 1920u // 60cm * 32us/cm
 
 int _minRange = -1;
 int _maxRange = -1;
 
-void Soft_delay_us(u32 nTimer)
+
+#if defined(USE_SOFT_DELAY)
+
+void HCSR04_delay_us(u32 nTimer)
 {
     u32 i = 0;
     for (i = 0; i < nTimer; i++)
@@ -21,13 +25,23 @@ void Soft_delay_us(u32 nTimer)
     }
 }
 
-void Soft_delay_ms(u32 nTimer)
+void HCSR04_delay_ms(u32 nTimer)
 {
     u32 i = 1000 * nTimer;
-    Soft_delay_us(i);
+    HCSR04_delay_us(i);
 }
 
-void HCSR04_Init(int minRange, int maxRange) //init
+#else
+
+#define HCSR04_delay_us(us) delay_us(us)
+#define HCSR04_delay_ms(ms) delay_ms(ms)
+
+#endif // USE_SOFT_DELAY
+
+
+
+
+void HCSR04_Init(int minRange, int maxRange)
 {
     GPIO_InitTypeDef GPIO_InitStructure;
 
@@ -52,14 +66,14 @@ int HCSR04_echoInMicroseconds(void)
 {
     int waitT = 0;
     TRIGGER_L();
-    Soft_delay_us(5);
+    HCSR04_delay_us(5);
     TRIGGER_H();
-    Soft_delay_us(10);
+    HCSR04_delay_us(10);
     TRIGGER_L();
 
     while (ECHO_READ() == 0)
     {
-        Soft_delay_us(1);
+        HCSR04_delay_us(1);
         waitT++;
         if (waitT > 0xFF)
             return HCSR04_ERROR;
@@ -69,7 +83,7 @@ int HCSR04_echoInMicroseconds(void)
 
     while (ECHO_READ() == 1)
     {
-        Soft_delay_us(1);
+        HCSR04_delay_us(1);
         waitT++;
         if (waitT > ECHO_TIMEOUT)
             return HCSR04_TIMEOUT;
@@ -85,7 +99,7 @@ int HCSR04_distanceInMillimeters(void)
     tim3_int_flag = 0;
     nrf_int_flag = 0;
     duration = HCSR04_echoInMicroseconds();
-    printf("duration = %d\r\n", duration);
+    //printf("duration = %d\r\n", duration); //调试用
 
     if (tim3_int_flag || nrf_int_flag)
     {

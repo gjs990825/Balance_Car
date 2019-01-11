@@ -1,7 +1,9 @@
 #include "motor.h"
 #include "Protocol.h"
 
-#define TURN_SPEED_R 100 //Turnning speed set
+//以下宏定义针对蓝牙，对摇杆不起作用
+
+#define TURN_SPEED_R 100 //蓝牙转动速度设定
 #define TURN_SPEED_L 100
 
 #define STEP_LENTH 5 //越小越平滑，但响应速度变慢
@@ -187,6 +189,7 @@ void Motor_SpeedControl(int16_t speed_l, int16_t speed_r)
 	}
 }
 
+//电机PWM输出配置，TIM1
 void TIM1_PWMInit(uint16_t arr, uint16_t psc)
 {
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseInitStructure;

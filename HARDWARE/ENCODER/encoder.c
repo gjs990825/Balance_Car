@@ -1,5 +1,8 @@
 #include "encoder.h"
 
+//编码器配置
+//使用TIM2和TIM4的输入捕获功能获取当前脉冲数量积分得到速度
+
 void TIM4_EncoderInit(uint16_t arr, uint16_t psc)
 {
 	GPIO_InitTypeDef GPIO_InitStructure;
@@ -68,6 +71,8 @@ void TIM2_EncoderInit(uint16_t arr, uint16_t psc)
 
 	TIM_Cmd(TIM2, ENABLE);
 }
+
+//读出计数值
 
 int16_t TIM4_EncoderRead(void)
 {

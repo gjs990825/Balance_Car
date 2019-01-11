@@ -58,9 +58,7 @@ void Angle_Calcu(void)
 {
 	//------根据加速度分量测得角速度--------------------------
 	//不自测，加速度传感器范围设置  0  ±2g	 16384 LSB/g
-	Angle_aYZ = atan2((MPU6050_Get_Data(ACCEL_YOUT_H)), (MPU6050_Get_Data(ACCEL_ZOUT_H))) * 180 / PI;
-	//Angle_aYZ = atan2((Out_Data(ACCEL_YOUT_H) - 300), (Out_Data(ACCEL_ZOUT_H)-(16384-16450))) *180/PI ;   //去除零点偏移,计算得到角度（弧度）
-	//弧度转换为度,
+	Angle_aYZ = atan2((MPU6050_Get_Data(ACCEL_YOUT_H)), (MPU6050_Get_Data(ACCEL_ZOUT_H))) * 180 / PI;//计算得到角度（弧度），弧度转换为度
 
 	//-------角速度-------------------------
 	//不自测，陀螺仪测量范围设置	 0  ±250°/s  131LSB/(°/s)	0.00763358 (°/s)/LSB

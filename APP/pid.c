@@ -5,10 +5,11 @@
 #include "buzzer.h"
 
 //蓝牙遥控的行进速度
-const int Movement_S = 130;
+const int16_t Movement_S = 120;
 
 //开始限制速度的距离
-const uint16_t DistanceThreshold = 50;
+const uint8_t DistanceThreshold = 45;
+const uint8_t dodgeDistance = 20;
 
 //速度环的参数
 int PWM = 0;
@@ -36,14 +37,14 @@ int balance(float Angle, float gy)
 	return balance;
 }
 
-/***************************************************************************
- *   速度PI控制(比例积分)      PI 调节器是一种线性控制器，它根据给定值与实际输出值构成控制偏
-                               差，将偏差的比例（P）和积分（I）通过线性组合构成控制量，对被控
-                               对象进行控制。
- *   左右编码器的值            
- ***************************************************************************/
-int velocity(int16_t curSpeed) //平衡小车的控制系统是正反馈--当小车以一定的速度
-{							   //运行的时候，我们要让小车停下来，小车需要行驶更快的速度去 “追”
+/*
+ PI 调节器是一种线性控制器，它根据给定值与实际输出值构成控制偏
+ 差，将偏差的比例（P）和积分（I）通过线性组合构成控制量，对被控
+ 对象进行控制。
+ */
+//速度PI控制(比例积分)  //参数：当前速度
+int velocity(int16_t curSpeed) //平衡小车的控制系统是正反馈
+{
 	float Kp = 13, Ki = 0.081;
 
 	if (CMD == CMD_GO) //蓝牙指令执行
@@ -63,7 +64,7 @@ int velocity(int16_t curSpeed) //平衡小车的控制系统是正反馈--当小车以一定的速度
 	{
 		if ((currentSpeed + 10 > currentDistance) && currentDistance < DistanceThreshold) //限制速度，临界速度10
 		{
-			Movement += (Yoffset > 0) ? -(currentSpeed + DistanceThreshold - currentDistance) : Yoffset;
+			Movement += (Yoffset > -10) ? -(currentSpeed + DistanceThreshold - currentDistance) : Yoffset;
 			Buzzer_Set(1);
 		}
 		else
@@ -71,6 +72,11 @@ int velocity(int16_t curSpeed) //平衡小车的控制系统是正反馈--当小车以一定的速度
 			Movement += Yoffset;
 			Buzzer_Set(0);
 		}
+	}
+
+	if (currentDistance < dodgeDistance) //自行远离障碍物
+	{
+		Movement -= 10;
 	}
 
 	Speed_r_l = curSpeed;

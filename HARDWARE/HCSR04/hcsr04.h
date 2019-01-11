@@ -3,6 +3,9 @@
 
 #include "sys.h"
 
+//软件延时 中断中含有systic定时器时启用
+//#define USE_SOFT_DELAY
+
 #define GPIO_HCSR04	        GPIOB
 #define HCSR04_PIN_ECHO		GPIO_Pin_13
 #define HCSR04_PIN_TRIGGER	GPIO_Pin_12
