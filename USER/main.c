@@ -41,7 +41,7 @@ int main(void)
 	TIM3_TimerInit(100 - 1, 7200 - 1); //10ms PID control
 	delay_ms(100);
 
-	Buzzer_Init();
+//	Buzzer_Init();
 	Hard_SPIInit();			 //SPI initialize peripheral and GPIO
 	NRF_Init(MODEL_RX2, 80); //NRF24L01 module initialize set mode RX2
 
