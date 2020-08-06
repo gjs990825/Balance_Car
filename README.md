@@ -1,2 +1,1 @@
-# Balance_CarV3_TEST
-STM32 Self balance robot
+This project has been improved and now is moved to another repo: [Self_Balancing_Robot](https://github.com/gjs990825/Self_Balancing_Robot);
